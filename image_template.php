@@ -3,12 +3,12 @@
 Template Name: Pic Gallery Page
 Author: Suprabha supi
 Author URI: https://github.com/suprabhasupi
-Description: This Template shows all the  five random images from the first gallery of each post. 
+Description: This Template shows five random images from the first gallery of each post. 
 Version: 1.0
 */
 ?>
 <?php 
-/* This Template shows all the images from the first gallery of each post */
+/* This Template shows five random images from the first gallery of each post */
 /* Argument to query all the post from wordpress*/
 $args = array('post_type' => 'post');
 /* Wordpress Query */
