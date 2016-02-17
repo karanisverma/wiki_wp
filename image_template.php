@@ -3,7 +3,7 @@
 Template Name: Pic Gallery Page
 Author: Suprabha supi
 Author URI: https://github.com/suprabhasupi
-Description: This Template shows all the images from the first gallery of each post 
+Description: This Template shows all the  five random images from the first gallery of each post. 
 Version: 1.0
 */
 ?>
@@ -19,19 +19,20 @@ $the_query = new WP_Query( $args ); ?>
     <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
             <?php
                 $post_id =get_the_ID();
+                /* Checking if gallery exist in post */
                 if ( get_post_gallery() ) :
                         /* Getting the gallery object for particular post*/
                         $gallery = get_post_gallery( $post_id, false );
                         $counter = 0;
                         
-                        /* to shuffle the list for adding randomness in output.*/
+                        /* To shuffle the list for adding randomness in output.*/
                         shuffle($gallery['src']);
                         
                         /* Loop through all the image and output them one by one */
                         foreach( $gallery['src'] as $src ) : ?><img src="<?php echo $src; ?>" class="img_class" alt="Gallery image" />
                          
                         <?php
-                        /*count number of element in loop if more than 5 then break */
+                        /* Count number of element in loop if more than 5 then break */
                               ++$counter;
                               if($counter == 5){
                               break;
